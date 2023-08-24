@@ -12,9 +12,9 @@ interface state {
 
 class Logout extends React.Component<{}, state> {
 
-  componentDidMount(){
+  componentDidMount() {
     new Cookies().remove("cookieid");
-    window.location.replace(Router.url("admin"));
+    Router.navigate(Router.url("admin"));
   };
 
   render() {

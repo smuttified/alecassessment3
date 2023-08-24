@@ -68,7 +68,7 @@ class Admin extends React.Component<{}, state> {
     fetch(Router.backend + "/admin/deleteVehicle", Router.fetchOptions({ id: productid })).then(async response => {
       const result = await response.json();
       if (result.session === false) {
-        window.location.replace(Router.url("login"));
+        Router.navigate(Router.url("login"));
         return;
       }
       const products: Vehicle[] = [];
