@@ -2,6 +2,7 @@ import React, { ChangeEvent, FormEvent } from "react";
 import PageTemplate from "../template/PageTemplate";
 import Router from "../utilities/Router";
 import Cookies from "universal-cookie";
+import { useNavigate } from "react-router-dom";
 
 interface state {
   login: boolean;
@@ -11,6 +12,8 @@ interface state {
 }
 
 class Login extends React.Component<{}, state> {
+
+  navigate = useNavigate();
 
   constructor(props: {}) {
     super(props);
@@ -47,7 +50,7 @@ class Login extends React.Component<{}, state> {
 
       if (result.session) {
         new Cookies().set("cookieid", result.id);
-        window.location.href = Router.homepage + "/admin";
+        this.navigate(Router.homepage + "/admin");
       } else {
         this.updateState(true, this.state.username, this.state.password, false);
       }
