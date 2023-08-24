@@ -1,0 +1,18 @@
+.card .card-body{
+    height:250px;
+    background-position: center;
+    background-size: cover;
+}
+.text-silver{
+    color:rgb(136, 136, 136);
+}
+
+.ellipsis{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.row-hover:hover{
+    background-color: var(--bs-light);
+}

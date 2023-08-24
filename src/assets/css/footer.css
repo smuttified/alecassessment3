@@ -1,0 +1,8 @@
+footer{
+    min-height: 300px;
+}
+footer a.no-decoration{
+    text-decoration: none;
+    display: block;
+    color: var(--bs-light);
+}
