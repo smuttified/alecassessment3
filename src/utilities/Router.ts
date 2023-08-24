@@ -1,8 +1,8 @@
 import Cookies from "universal-cookie";
 
 class Router {
-    static homepage: string = "http://localhost:3000";
-    static backend: string = "http://localhost:3001";
+    static homepage: string = "https://alecassessment3.onrender.com";
+    static backend: string = "https://alecassessment3backend.onrender.com";
 
     static url(path: string): string {
         return Router.homepage + "/" + path;
