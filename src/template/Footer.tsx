@@ -34,8 +34,9 @@ class Footer extends React.Component<{}, state> {
                     <div className="col-lg-4">
                         <b>PAGES</b>
                         <Link className="no-decoration" to={Router.homepage}>Homepage</Link>
-                        <Link className="no-decoration" to={Router.url("book")}>Book Now!</Link>
+                        <Link className="no-decoration" to={Router.url("qrcode")}>Show QR Code</Link>
                         <hr />
+                        {this.state.isloggedin ? <Link className="no-decoration" to={Router.url("admin")}>Admin Dashboard</Link> : ""}
                         {this.state.isloggedin ? <Link className="no-decoration" to={Router.url("logout")}>Logout</Link> : <Link className="no-decoration" to={Router.url("login")}>Login</Link>}
                     </div>
                     <div className="col-lg-4">

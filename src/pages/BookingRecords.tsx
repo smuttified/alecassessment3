@@ -54,7 +54,7 @@ class BookingRecords extends React.Component<{}, state> {
     return (
       <PageTemplate title="Admin">
         <span className="d-flex justify-content-between align-items-center">
-          <h1 className="mb-3 mb-lg-4">Vehicles</h1>
+          <h1 className="mb-3 mb-lg-4">Booking Records</h1>
           <Link to={Router.url("admin")} className="btn btn-primary rounded-0">View Vehicles</Link>
         </span>
         <div className="row g-0 d-none d-lg-flex">

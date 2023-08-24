@@ -15,7 +15,7 @@ class Header extends React.Component<{}> {
                                 <Link className="nav-link active" aria-current="page" to={Router.homepage}>Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={Router.url("book")}>Book Now</Link>
+                                <Link className="nav-link" aria-current="page" to={Router.url("qrcode")}>Show QR Code</Link>
                             </li>
                         </ul>
                     </div>

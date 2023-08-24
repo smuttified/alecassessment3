@@ -2,7 +2,6 @@ import React, { ChangeEvent, FormEvent } from "react";
 import PageTemplate from "../template/PageTemplate";
 import Vehicle from "../models/Vehicle";
 import Router from "../utilities/Router";
-import { useNavigate } from "react-router-dom";
 
 interface state {
   product: Vehicle;
@@ -10,8 +9,6 @@ interface state {
 }
 
 class VehicleForm extends React.Component<{}, state> {
-
-  navigate = useNavigate();
 
   constructor(props: {}) {
     super(props);
@@ -38,7 +35,7 @@ class VehicleForm extends React.Component<{}, state> {
       fetch(Router.backend + "/admin/getVehicleInfo", Router.fetchOptions({ id: path[3] })).then(async response => {
         const result = await response.json();
         if (result.session === false) {
-          this.navigate(Router.url("login"));
+          Router.navigate(Router.url("login"));
           return;
         }
 
@@ -79,12 +76,12 @@ class VehicleForm extends React.Component<{}, state> {
     fetch(Router.backend + "/admin/saveVehicle", Router.fetchOptions(this.state.product)).then(async response => {
       const result = await response.json();
       if (result.session === false) {
-        this.navigate(Router.url("login"));
+        Router.navigate(Router.url("login"));
         return;
       }
 
       if (result) {
-        this.navigate(Router.url("admin"));
+        Router.navigate(Router.url("admin"));
       }
     });
 

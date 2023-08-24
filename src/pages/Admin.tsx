@@ -40,7 +40,7 @@ class Admin extends React.Component<{}, state> {
     fetch(Router.backend + "/admin/getVehicles", Router.fetchOptions()).then(async response => {
       const result = await response.json();
       if (result.session === false) {
-        window.location.replace(Router.url("login"));
+        Router.navigate(Router.url("login"));
         return;
       }
       const products = document.getElementById("products");
@@ -73,7 +73,6 @@ class Admin extends React.Component<{}, state> {
       }
       const products: Vehicle[] = [];
       this.state.products.forEach(function (product: Vehicle) {
-        console.log(product._id, btn.dataset.id);
         if (product._id !== productid) {
           products.push(product);
         }

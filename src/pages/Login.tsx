@@ -47,7 +47,7 @@ class Login extends React.Component<{}, state> {
 
       if (result.session) {
         new Cookies().set("cookieid", result.id);
-        Router.navigate(Router.homepage + "/admin");
+        Router.navigate(Router.url("admin"));
       } else {
         this.updateState(true, this.state.username, this.state.password, false);
       }
