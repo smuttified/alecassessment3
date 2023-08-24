@@ -58,7 +58,8 @@ class Homepage extends React.Component<{}, state> {
         <div className="row g-3 g-lg-5" id="products">
           {this.state.productList.map((row: Vehicle) => <Product key={row._id} title={row.name} image={row.image} description={row.description} />)}
         </div>
-        <p className={this.state.productState ? "alert border border-danger rounded-2 text-center text-danger" : "d-none"}>No Rentables Found</p>
+        <p className={!this.state.productState && !this.state.productList.length ? "alert border border-info rounded-2 text-center text-info mt-3" : "d-none"}>Fetching records from server... Please wait...</p>
+        <p className={this.state.productState ? "alert border border-danger rounded-2 text-center text-danger mt-3" : "d-none"}>No Rentables Found</p>
       </PageTemplate>
     );
   }

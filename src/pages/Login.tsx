@@ -42,6 +42,8 @@ class Login extends React.Component<{}, state> {
   form_Submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
+    this.updateState(false, this.state.username, this.state.password, true);
+
     fetch(Router.backend + "/authentication", Router.fetchOptions({ username: this.state.username, password: this.state.password })).then(async response => {
       const result = await response.json();
 
@@ -73,6 +75,9 @@ class Login extends React.Component<{}, state> {
                 <input className="btn btn-dark rounded-0 d-block col-12" type="submit" value="Login" />
                 <p className={!this.state.access && this.state.login ? "alert mt-3 border border-danger text-danger text-center mb-0" : "d-none"}>
                   Invalid Username / Password
+                </p>
+                <p className={this.state.access && !this.state.login ? "alert mt-3 border border-info text-info text-center mb-0" : "d-none"}>
+                  Logging in... Please wait...
                 </p>
               </div>
             </form>
